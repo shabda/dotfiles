@@ -106,6 +106,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 export EDITOR=vim
+export PATH=$PATH:~/bin:/opt/bin
 
 function s {
    subl $@ &
