@@ -16,3 +16,16 @@
     p = push
     st = status -sb
     up = pull
+    refresh=pull origin master
+	switch = !legit switch \"$@\"
+	branches = !legit branches
+	sprout = !legit sprout \"$@\"
+	unpublish = !legit unpublish \"$@\"
+	harvest = !legit harvest \"$@\"
+	sync = !legit sync \"$@\"
+	publish = !legit publish \"$@\"
+	graft = !legit graft \"$@\"
+   
+
+[core]
+	excludesfile = ~/.gitignore  
