@@ -85,6 +85,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -111,17 +112,48 @@ export PATH=$PATH:~/bin:/opt/bin
 function s {
    subl $@ &
 }
+
+function processes {
+    px aux | grep $@
+}
+
+function move_tax_pdf {
+    mv ~/cbdt-*.pdf ~/Dropbox/tax_payments/
+    mv ~/tds-*.pdf ~/Dropbox/tax_payments/
+}
+
+python_source () {
+        cmd="import $1 as a ; print a.__file__.endswith('.pyc') and a.__file__[:-1] or a.__file__"
+        file=$(/usr/bin/env python -c $cmd)
+        echo $file
+        subl $file
+}
+
+
 #alias subl="subl &"
 source /usr/local/bin/virtualenvwrapper.sh
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 export DROPBOX=$HOME/Dropbox
 export DOWNLOADS=$HOME/Downloads
 export AGILIQ_REPO=$HOME/repos/agiliqdotcom/agiliqdotcom/agiliqcom
+. /home/shabda/Dropbox/mac/repos/z/z.sh
+export PATH=$PATH:/home/shabda/bin/android-studio/android-studio/bin
+PATH=$PATH:/home/shabda/bin/android-studio/android-studio/sdk/tools
+export ANDROID_HOME=/home/shabda/bin/android-studio/android-studio
 
-alias today='git log --pretty=format:"%h %s" --since=12hour --branches --no-merges --author=shabda@agiliq.com'
+alias today='git log --pretty=format:"%h %s" --since=24hour --branches --no-merges --author=shabda@agiliq.com'
 alias pms="python manage.py shell"
+alias pmsp="python manage.py shell_plus"
 alias pmr="python manage.py runserver"
-alias copy_invoices="mv Invoice-*.pdf ~/Dropbox/invoices/"
+alias copy_invoices="mv $DOWNLOADS/Invoice-*.pdf $DROPBOX/invoices/"
 alias untar="tar -xvzf"
 alias e="vim"
+alias plz="sudo"
 alias open=gnome-open
+alias git=hub
+alias z=cd #z is the new j
+alias smartgit="~/bin/smartgit/bin/smartgithg.sh &"
+alias delete-branch="git branch -d"
+alias android-studio="studio.sh &"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
