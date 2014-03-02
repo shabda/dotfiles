@@ -136,10 +136,10 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 export DROPBOX=$HOME/Dropbox
 export DOWNLOADS=$HOME/Downloads
 export AGILIQ_REPO=$HOME/repos/agiliqdotcom/agiliqdotcom/agiliqcom
-. /home/shabda/Dropbox/mac/repos/z/z.sh
-export PATH=$PATH:/home/shabda/bin/android-studio/android-studio/bin
-PATH=$PATH:/home/shabda/bin/android-studio/android-studio/sdk/tools
-export ANDROID_HOME=/home/shabda/bin/android-studio/android-studio
+. $HOME/Dropbox/mac/repos/z/z.sh
+export PATH=$PATH:$HOME/bin/android-studio/android-studio/bin
+PATH=$PATH:$HOME/bin/android-studio/android-studio/sdk/tools
+export ANDROID_HOME=$HOME/bin/android-studio/android-studio
 
 alias today='git log --pretty=format:"%h %s" --since=24hour --branches --no-merges --author=shabda@agiliq.com'
 alias pms="python manage.py shell"
