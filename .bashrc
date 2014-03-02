@@ -107,7 +107,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 export EDITOR=vim
-export PATH=$PATH:~/bin:/opt/bin
+
 
 function s {
    subl $@ &
@@ -159,3 +159,4 @@ alias delete-branch="git branch -d"
 alias android-studio="studio.sh &"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:~/bin:/opt/bin
