@@ -156,6 +156,7 @@ alias git-ignore="git update-index --assume-unchanged"
 alias git-no-ignore="git update-index --no-assume-unchanged"
 alias smartgit="~/bin/smartgit/bin/smartgithg.sh &"
 alias delete-branch="git branch -d"
+alias delete-merged-branches 'git branch --merged | egrep -v "(^\*|master|develop)" | xargs git branch -d'
 alias android-studio="studio.sh &"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
