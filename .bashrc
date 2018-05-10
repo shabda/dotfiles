@@ -131,12 +131,11 @@ python_source () {
 
 
 #alias subl="subl &"
-source /usr/local/bin/virtualenvwrapper.sh
+source ~/.local/bin/virtualenvwrapper.sh
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 export DROPBOX=$HOME/Dropbox
 export DOWNLOADS=$HOME/Downloads
 export AGILIQ_REPO=$HOME/repos/agiliqdotcom/agiliqdotcom/agiliqcom
-. $HOME/Dropbox/mac/repos/z/z.sh
 export PATH=$PATH:$HOME/bin/android-studio/android-studio/bin
 PATH=$PATH:$HOME/bin/android-studio/android-studio/sdk/tools
 export ANDROID_HOME=$HOME/bin/android-studio/android-studio
@@ -150,14 +149,11 @@ alias untar="tar -xvzf"
 alias e="vim"
 alias plz="sudo"
 alias open=gnome-open
-alias git=hub
-alias z=cd #z is the new j
 alias git-ignore="git update-index --assume-unchanged"
 alias git-no-ignore="git update-index --no-assume-unchanged"
 alias smartgit="~/bin/smartgit/bin/smartgithg.sh &"
 alias delete-branch="git branch -d"
-alias delete-merged-branches 'git branch --merged | egrep -v "(^\*|master|develop)" | xargs git branch -d'
-alias android-studio="studio.sh &"
+alias delete-merged-branches='git branch --merged | egrep -v "(^\*|master|develop)" | xargs git branch -d'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:~/bin:/opt/bin
